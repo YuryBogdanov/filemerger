@@ -1,3 +1,6 @@
 {
-  "patterns": ["*patternOne.swift", "*patternTwo.swift"]
+
+  "patterns": ["*PatternOne.swift", "*PatternTwo.swift"],
+  "result_patter": "PatternIO.swift",
+  "delete_old_files": 0
 }
