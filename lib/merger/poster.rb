@@ -6,5 +6,17 @@ module Merger
       puts "====================== MERGER 👨‍💻  ======================".colorize(:green)
       puts "Preparing for files merging...".colorize(:green)
     end
+
+    def self.post_data_acquired
+      puts "Mergefile.json has been read..."
+    end
+
+    def self.post_searching
+      puts "Searching for specified files..."
+    end
+
+    def self.post_search_completed(pattern, count)
+      puts "Found #{count} file(s) matching #{pattern}"
+    end
   end
 end
