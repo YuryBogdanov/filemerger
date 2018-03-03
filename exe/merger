@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'merger/cli'
+Merger::CLI.start
