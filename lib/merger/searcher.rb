@@ -7,8 +7,14 @@ module Merger
   # This class should only merge files
   class Searcher
     def self.find_files(masks)
-      first_files = Dir.glob("**/#{masks.first}")
-      Poster.post_search_completed(masks.first, first_files.count)
+      files = []
+      masks.each do | mask |
+        mask_files = Dir.glob("**/#{mask}")
+        files.push(mask_files)
+        puts "Mask Files = #{mask_files}"
+        Poster.post_search_completed(mask, mask_files.count)
+      end
+      files
     end
   end
 end

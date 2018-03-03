@@ -1,11 +1,11 @@
 require "merger/version"
 require "merger/poster"
 require "merger/searcher"
+require "merger/filemerger"
 require "json"
 
 module Merger
   class Merger
-    # Rename this function to 'merge'
     # What to do here:
     # 1. Post greeting
     # 2. Read user input (json)
@@ -18,7 +18,7 @@ module Merger
       data = JSON.parse(file)
       Poster.post_data_acquired
 
-      Searcher.find_files(data["patterns"])
+      found = Searcher.find_files(data["patterns"])
     end
   end
 end
