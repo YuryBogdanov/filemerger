@@ -1,6 +1,6 @@
 require "merger/version"
 require "merger/poster"
-require "merger/filemerger"
+require "merger/searcher"
 require "json"
 
 module Merger
@@ -18,7 +18,7 @@ module Merger
       data = JSON.parse(file)
       Poster.post_data_acquired
 
-      Filemerger.find_files(data["patterns"])
+      Searcher.find_files(data["patterns"])
     end
   end
 end

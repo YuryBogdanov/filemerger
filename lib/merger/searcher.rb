@@ -5,7 +5,7 @@ module Merger
   # This class should only search for files
   # Create another one, which will be named Filemerger
   # This class should only merge files
-  class Filemerger
+  class Searcher
     def self.find_files(masks)
       first_files = Dir.glob("**/#{masks.first}")
       Poster.post_search_completed(masks.first, first_files.count)
