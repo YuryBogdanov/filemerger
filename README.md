@@ -49,7 +49,7 @@ and you want to merge them into single file for each view, something like:
 `FirstViewIO.swift`  
 `SecondViewIO.swift`
 
-In this case you should create `Mergefile.json` in your project's root directory (or any other which contains files for merging), navigate to this directory in terminal and run command:
+In this case you should create `Mergefile.json` in your project's root directory (or any other which contains files for merging), navigate to this directory in terminal and run command:  
 `merger merge`
 
 
