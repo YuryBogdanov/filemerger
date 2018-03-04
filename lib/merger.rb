@@ -18,7 +18,24 @@ module Merger
       data = JSON.parse(file)
       Poster.post_data_acquired
 
-      found = Searcher.find_files(data["patterns"])
+      found = Searcher.find_files_for_mask(data["patterns"].first)
+
+      found.each do |file|
+        file_name = File.basename(file).to_s.chomp(data["patterns"].first)
+        puts "FILE NAME #{file_name}"
+        puts "Sec Pattern #{data["patterns"][1]}"
+        second_file = File.dirname(file) + "/" + file_name + data["patterns"][1]
+
+        if File.exist?(second_file)
+          first_text = File.readlines(file).join()
+          second_text = File.readlines(second_file).join()
+          new_content = first_text + "\n" + second_text
+          puts "Result pattern #{data["result_pattern"]}"
+          new_file_name = File.dirname(file) + "/" + file_name + data["result_pattern"]
+          File.open(new_file_name, "w") { |f| f.puts new_content }
+          puts "❇️  File #{new_file_name} created"
+        end
+      end
     end
   end
 end

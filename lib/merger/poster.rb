@@ -18,5 +18,9 @@ module Merger
     def self.post_search_completed(pattern, count)
       puts "Found #{count} file(s) matching #{pattern}"
     end
+
+    def self.post_created_file(file_name)
+      puts "Created merged file #{file_name}"
+    end
   end
 end
