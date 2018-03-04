@@ -23,7 +23,7 @@ Or install it yourself as:
 ## Usage
 
 Create `Mergefile.yaml` in directory where you would like your files merged. This file should contain the following:
-```
+```yaml
 # Specify which files should be merged. The gem will look up for files matching patterns you input here.
 # Do not use asterisk (*).
 # Example:
