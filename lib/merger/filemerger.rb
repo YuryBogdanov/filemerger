@@ -1,28 +1,32 @@
 require 'merger/poster'
+require 'merger/searcher'
 
 module Merger
   class Filemerger
-    def self.merge_files(first_file, second_file)
-      puts "FILE! #{first_file} | CLASS! #{first_file.class}"
-      # first_content = File.readlines(first_file).join()
-      # second_content = File.readlines(second_file).join()
+    def self.merge_files(config)
+      first_mask_files = Searcher.find_files_for_mask(config.masks.first)
+      first_mask_files.each do |first_mask_file|
+        file_name = File.basename(first_mask_file).to_s.chomp(config.masks.first)
 
-      # result_content = first_content + "\n" + second_content
-      #
-      # save_to_file(result_content)
-      # delete_file_if_needed(first_file)
-      # delete_file_if_needed(second_file)
+        content = ""
+        config.masks.each do |mask|
+          file = File.dirname(first_mask_file) + "/" + file_name + mask
+          content += File.readlines(file).join() + "\n"
+          delete_file_if_needed(file, config)
+        end
+
+        new_file_name = File.dirname(first_mask_file) + "/" + file_name + config.result_mask
+        File.open(new_file_name, "w") { |f| f.puts content }
+        puts "❇️  File #{new_file_name} created"
+      end
     end
 
     private
 
-    def self.save_to_file(content)
-      File.open("output_file", "w") { |f| f.puts content }
-      Poster.post_created_file("output_file")
-    end
-
-    def self.delete_file_if_needed(file)
-      # delete old files
+    def self.delete_file_if_needed(file, config)
+      if config.delete_old_files
+        File.delete(file)
+      end
     end
   end
 end
