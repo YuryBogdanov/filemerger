@@ -31,7 +31,8 @@ Create `Mergefile.json` in directory where you would like your files merged. Thi
 }
 ```
 
-|| Parameter || Description ||
+| Parameter | Description |
+| --------- | ----------- |
 | **masks** | Gem will look up for files matching masks you specify in this parameter and then merge them. Do not includ asterisks (`*`). |
 | **result_mask** | This mask will be applied to result file. |
 | **delete_old_files** | If set to `true` then old files will be removed. |
