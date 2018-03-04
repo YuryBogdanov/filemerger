@@ -1,8 +1,8 @@
-require 'merger/poster'
-require 'merger/searcher'
+require 'filemerger/poster'
+require 'filemerger/searcher'
 
-module Merger
-  class Filemerger
+module Filemerger
+  class Merger
     def self.merge_files(config)
       first_mask_files = Searcher.find_files_for_mask(config.masks.first)
 

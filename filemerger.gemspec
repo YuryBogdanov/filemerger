@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "merger/version"
+require "filemerger/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "merger"
-  spec.version       = Merger::VERSION
+  spec.name          = "filemerger"
+  spec.version       = Filemerger::VERSION
   spec.authors       = ["Yury Bogdanov"]
   spec.email         = ["yury-bogdanov@mail.ru"]
 
   spec.summary       = %q{Ruby gem for merging files}
   spec.description   = %q{Ruby gem for merging files.}
-  spec.homepage      = "https://github.com/yurybogdanov/merger"
+  spec.homepage      = "https://github.com/yurybogdanov/filemerger"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

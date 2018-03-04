@@ -1,4 +1,4 @@
-# Merger
+# Filemerger
 
 Merger is a simple gem for merging files matching specified name patterns.
 
@@ -7,7 +7,7 @@ Merger is a simple gem for merging files matching specified name patterns.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'merger'
+gem 'filemerger'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install merger
+    $ gem install filemerger
 
 ## Usage
 
@@ -45,23 +45,6 @@ delete_old_files: true
 
 ```
 
-## Example
-
-Let's say you have lots of files called something like
-`FirstViewInput.swift`  
-`FirstViewOutput.swift`
-`SecondViewInput.swift`
-`SecondViewOutput.swift`
-etc.
-
-and you want to merge them into single file for each view, something like:
-`FirstViewIO.swift`  
-`SecondViewIO.swift`
-
-In this case you should create `Mergefile.json` in your project's root directory (or any other which contains files for merging), navigate to this directory in terminal and run command:  
-`merger merge`
-
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -70,7 +53,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/merger. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/filemerger. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -78,4 +61,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Merger project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/merger/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Filemerger project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/filemerger/blob/master/CODE_OF_CONDUCT.md).
