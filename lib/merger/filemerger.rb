@@ -5,6 +5,12 @@ module Merger
   class Filemerger
     def self.merge_files(config)
       first_mask_files = Searcher.find_files_for_mask(config.masks.first)
+
+      if first_mask_files.count == 0
+        Poster.post_nothing_found
+        exit
+      end
+
       first_mask_files.each do |first_mask_file|
         file_name = File.basename(first_mask_file).to_s.chomp(config.masks.first)
         content = ""
@@ -20,7 +26,7 @@ module Merger
 
         new_file_name = File.dirname(first_mask_file) + "/" + file_name + config.result_mask
         File.open(new_file_name, "w") { |f| f.puts content }
-        puts "❇️  File #{new_file_name} created"
+        Poster.post_file_created(new_file_name)
       end
       Poster.post_merge_finished
     end
