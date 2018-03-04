@@ -1,20 +1,22 @@
+require 'yaml'
+require 'merger/poster'
 
 module Merger
   class Configuration
     attr_reader :masks, :result_mask, :delete_old_files
 
     def initialize
-      puts "Searching for Mergefile.json in #{Dir.pwd}"
+      Poster.post_configuration_search
 
-      if File.exist?("Mergefile.json")
-        file_data = File.read("Mergefile.json")
-        data = JSON.parse(file_data)
+      if File.exist?("Mergefile.yaml")
+        Poster.post_configuration_found
+        data = YAML.load_file("Mergefile.yaml")
 
         @masks = data["masks"]
         @result_mask = data["result_mask"]
         @delete_old_files = data["delete_old_files"]
       else
-        puts "Couldn't locate configuration file"
+        Poster.post_configuration_not_found
         exit
       end
     end

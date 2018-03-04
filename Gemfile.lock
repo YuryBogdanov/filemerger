@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    merger (0.1.0)
+    merger (0.2.1)
       colorize
       json
       thor

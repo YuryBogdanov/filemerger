@@ -1,8 +1,6 @@
 # Merger
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/merger`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Merger is a simple gem for merging files matching specified name patterns.
 
 ## Installation
 
@@ -22,7 +20,47 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Create `Mergefile.yaml` in directory where you would like your files merged. This file should contain the following:
+```yaml
+# Specify which files should be merged. The gem will look up for files matching patterns you input here.
+# Do not use asterisk (*).
+# Example:
+# masks:
+#   - 'PatternOne.swift'
+#   - 'PatternTwo.swift'
+#   - 'PatternThree.swift'
+
+masks:
+  - 'PatternOne.swift'
+  - 'PatternTwo.swift'
+  - 'PatternThree.swift'
+
+# Specify which prefix should contain newly created files (which contain merged content)
+# Example:
+# result_mask: 'PatternIO.swift'
+result_mask: 'PatternIO.swift'
+
+# Specify if files should be deleted after merge
+delete_old_files: true
+
+```
+
+## Example
+
+Let's say you have lots of files called something like
+`FirstViewInput.swift`  
+`FirstViewOutput.swift`
+`SecondViewInput.swift`
+`SecondViewOutput.swift`
+etc.
+
+and you want to merge them into single file for each view, something like:
+`FirstViewIO.swift`  
+`SecondViewIO.swift`
+
+In this case you should create `Mergefile.json` in your project's root directory (or any other which contains files for merging), navigate to this directory in terminal and run command:  
+`merger merge`
+
 
 ## Development
 
