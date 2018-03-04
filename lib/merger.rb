@@ -10,9 +10,8 @@ module Merger
     def self.begin_merge
       Poster.post_greeting
       puts "Searching for Mergefile.json in #{Dir.pwd}"
-      file = File.read("Mergefile.json")
-      data = JSON.parse(file)
-      config = Configuration.new(data)
+      
+      config = Configuration.new
 
       Poster.post_data_acquired
 
