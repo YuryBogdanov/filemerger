@@ -9,11 +9,7 @@ module Merger
   class Merger
     def self.begin_merge
       Poster.post_greeting
-
       config = Configuration.new
-
-      Poster.post_data_acquired
-
       Filemerger.merge_files(config)
     end
   end

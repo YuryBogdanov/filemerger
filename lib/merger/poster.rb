@@ -2,33 +2,42 @@ require 'colorize'
 
 module Merger
   class Poster
+    # Configuration
+    def self.post_configuration_search
+      puts "🕵️‍♂️  Searching for Mergefile.yaml in #{Dir.pwd}".colorize(:blue)
+    end
+
+    def self.post_configuration_found
+      puts "🤘  Found Mergefile.yaml...".colorize(:green)
+    end
+
+    def self.post_configuration_not_found
+      puts "👿 Mergefile.yaml not found!".colorize(:red)
+    end
+
+    # General
     def self.post_greeting
       puts "====================== MERGER 👨‍💻  ======================".colorize(:green)
-      puts "Preparing for files merging...".colorize(:green)
     end
 
-    def self.post_data_acquired
-      puts "Mergefile.json has been read..."
+    def self.post_file_created(file_name)
+      puts "❇️  File #{file_name} created"
     end
 
-    def self.post_searching
-      puts "Searching for specified files..."
+    def self.post_nothing_found
+      puts "0️⃣  No files matching specified masks found.".colorize(:blue)
     end
 
     def self.post_search_completed(pattern, count)
-      puts "Found #{count} file(s) matching #{pattern}"
-    end
-
-    def self.post_created_file(file_name)
-      puts "Created merged file #{file_name}"
+      puts "💁‍♀️  Found #{count} file(s) matching #{pattern}"
     end
 
     def self.post_file_not_found(file)
-      puts "Couldn't find file #{file}".colorize(:red)
+      puts "❗️  Couldn't find file #{file}".colorize(:red)
     end
 
     def self.post_merge_finished
-      puts "The merge has been successfuly completed.".colorize(:green)
+      puts "✅  The merge has been successfuly completed.".colorize(:green)
     end
   end
 end
