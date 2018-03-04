@@ -1,6 +1,6 @@
 require 'colorize'
 
-module Merger
+module Filemerger
   class Poster
     # Configuration
     def self.post_configuration_search

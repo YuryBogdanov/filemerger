@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    merger (0.2.1)
+    filemerger (0.3.0)
       colorize
       json
       thor
@@ -19,7 +19,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  merger!
+  filemerger!
   rake (~> 10.0)
 
 BUNDLED WITH

@@ -1,12 +1,12 @@
 require 'thor'
-require 'merger'
+require 'filemerger'
 
-module Merger
+module Filemerger
   class CLI < Thor
 
     desc "Begins merging", "Checks if there are files and merges them"
     def merge
-      Merger.begin_merge
+      Filemerger.begin_merge
     end
 
   end

@@ -1,7 +1,7 @@
 require 'yaml'
-require 'merger/poster'
+require 'filemerger/poster'
 
-module Merger
+module Filemerger
   class Configuration
     attr_reader :masks, :result_mask, :delete_old_files
 

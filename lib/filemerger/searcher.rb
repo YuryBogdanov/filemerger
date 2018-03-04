@@ -1,6 +1,6 @@
-require 'merger/poster'
+require 'filemerger/poster'
 
-module Merger
+module Filemerger
   class Searcher
     def self.find_files(masks)
       files = []
