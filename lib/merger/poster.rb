@@ -22,5 +22,13 @@ module Merger
     def self.post_created_file(file_name)
       puts "Created merged file #{file_name}"
     end
+
+    def self.post_file_not_found(file)
+      puts "Couldn't find file #{file}".colorize(:red)
+    end
+
+    def self.post_merge_finished
+      puts "The merge has been successfuly completed.".colorize(:green)
+    end
   end
 end

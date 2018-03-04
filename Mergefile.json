@@ -1,6 +1,6 @@
 {
 
-  "masks": ["PatternOne.swift", "PatternTwo.swift"],
+  "masks": ["PatternOne.swift", "PatternTwo.swift", "PatternThree.swift"],
   "result_mask": "PatternIO.swift",
-  "delete_old_files": true
+  "delete_old_files": false
 }
