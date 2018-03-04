@@ -1,5 +1,6 @@
-# Filemerger
+# Filemerger  
 
+[![Gem Version](https://badge.fury.io/rb/filemerger.svg)](https://badge.fury.io/rb/filemerger)  
 Merger is a simple gem for merging files matching specified name patterns.
 
 ## Installation
