@@ -22,20 +22,30 @@ Or install it yourself as:
 
 ## Usage
 
-Create `Mergefile.json` in directory where you would like your files merged. This file should contain the following:
+Create `Mergefile.yaml` in directory where you would like your files merged. This file should contain the following:
 ```
-{
-  "masks": ["PatternOne.swift", "PatternTwo.swift", "PatternThree.swift"],
-  "result_mask": "PatternIO.swift",
-  "delete_old_files": false
-}
-```
+# Specify which files should be merged. The gem will look up for files matching patterns you input here.
+# Do not use asterisk (*).
+# Example:
+# masks:
+#   - 'PatternOne.swift'
+#   - 'PatternTwo.swift'
+#   - 'PatternThree.swift'
 
-| Parameter | Description |
-| --------- | ----------- |
-| **masks** | Gem will look up for files matching masks you specify in this parameter and then merge them. Do not includ asterisks (`*`). |
-| **result_mask** | This mask will be applied to result file. |
-| **delete_old_files** | If set to `true` then old files will be removed. |
+masks:
+  - 'PatternOne.swift'
+  - 'PatternTwo.swift'
+  - 'PatternThree.swift'
+
+# Specify which prefix should contain newly created files (which contain merged content)
+# Example:
+# result_mask: 'PatternIO.swift'
+result_mask: 'PatternIO.swift'
+
+# Specify if files should be deleted after merge
+delete_old_files: true
+
+```
 
 ## Example
 
