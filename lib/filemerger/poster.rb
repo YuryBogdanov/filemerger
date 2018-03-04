@@ -12,7 +12,7 @@ module Filemerger
     end
 
     def self.post_configuration_not_found
-      puts "👿 Mergefile.yaml not found!".colorize(:red)
+      puts "👿  Mergefile.yaml not found!".colorize(:red)
     end
 
     # General

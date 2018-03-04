@@ -1,7 +1,7 @@
 require "filemerger/version"
 require "filemerger/poster"
 require "filemerger/searcher"
-require "filemerger/filemerger"
+require "filemerger/merger"
 require "filemerger/configuration"
 require "json"
 
