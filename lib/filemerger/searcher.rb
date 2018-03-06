@@ -2,19 +2,20 @@ require 'filemerger/poster'
 
 module Filemerger
   class Searcher
-    def self.find_files(masks)
-      files = []
-      masks.each do | mask |
-        mask_files = Dir.glob("**/*#{mask}")
-        files.push(mask_files)
-        Poster.post_search_completed(mask, mask_files.count)
+    def self.find_files_for_mask(mask, folders)
+      unless folders.nil? || folders.empty?
+        files_for_merge = []
+        folders.each do |folder|
+          Poster.post_search_files("#{folder}/*#{mask}")
+          files_for_mask = Dir.glob("#{folder}/*#{mask}")
+          files_for_merge += files_for_mask
+        end
+        return files_for_merge
+      else
+        Poster.post_default_searching_path
+        files = Dir.glob("**/*#{mask}")
+        return files
       end
-      return files
-    end
-
-    def self.find_files_for_mask(mask)
-      files = Dir.glob("**/*#{mask}")
-      return files
     end
   end
 end
