@@ -3,7 +3,7 @@ require 'filemerger/poster'
 
 module Filemerger
   class Configuration
-    attr_reader :masks, :result_mask, :delete_old_files, :working_folders
+    attr_reader :masks, :result_mask, :delete_old_files, :working_folders, :ommit_lines
 
     def initialize
       Poster.post_configuration_search
@@ -16,6 +16,7 @@ module Filemerger
         @result_mask = data["result_mask"]
         @delete_old_files = data["delete_old_files"]
         @working_folders = data["working_folders"]
+        @ommit_lines = data["ommit_lines"]
       else
         Poster.post_configuration_not_found
         exit
