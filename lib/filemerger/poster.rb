@@ -28,16 +28,18 @@ module Filemerger
       puts "0️⃣  No files matching specified masks found.".colorize(:blue)
     end
 
-    def self.post_search_completed(pattern, count)
-      puts "💁‍♀️  Found #{count} file(s) matching #{pattern}"
-    end
-
     def self.post_file_not_found(file)
       puts "❗️  Couldn't find file #{file}".colorize(:red)
     end
 
     def self.post_merge_finished
       puts "✅  The merge has been successfuly completed.".colorize(:green)
+    end
+
+    # Search
+
+    def self.post_search_files(folder)
+      puts "🕵️‍♂️  Searching for files in #{folder}".colorize(:blue)
     end
   end
 end

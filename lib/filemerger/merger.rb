@@ -4,7 +4,7 @@ require 'filemerger/searcher'
 module Filemerger
   class Merger
     def self.merge_files(config)
-      first_mask_files = Searcher.find_files_for_mask(config.masks.first)
+      first_mask_files = Searcher.find_files_for_mask(config.masks.first, config.working_folders)
 
       if first_mask_files.count == 0
         Poster.post_nothing_found
