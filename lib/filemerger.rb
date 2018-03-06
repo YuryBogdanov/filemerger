@@ -10,7 +10,7 @@ module Filemerger
     def self.begin_merge
       Poster.post_greeting
       config = Configuration.new
-
+      # Get Xcode project and pass it to Merger
       Merger.merge_files(config)
     end
 
