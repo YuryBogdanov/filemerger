@@ -41,5 +41,10 @@ module Filemerger
     def self.post_search_files(folder)
       puts "🕵️‍♂️  Searching for files in #{folder}".colorize(:blue)
     end
+
+    def self.post_default_searching_path
+      puts "❗️  Searching folders not specified in Mergefile.".colorize(:yellow)
+      puts "🕵️‍♂️  Searching for files in #{Dir.pwd}".colorize(:blue)
+    end
   end
 end
