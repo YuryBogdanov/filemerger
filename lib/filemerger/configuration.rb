@@ -10,7 +10,7 @@ module Filemerger
 
       if File.exist?("Mergefile")
         Poster.post_configuration_found
-        data = YAML.load_file("Mergefile.yaml")
+        data = YAML.load_file("Mergefile")
 
         @masks = data["masks"]
         @result_mask = data["result_mask"]
