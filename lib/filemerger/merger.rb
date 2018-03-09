@@ -25,10 +25,14 @@ module Filemerger
       first_mask_files.each do |first_mask_file|
         file_name = File.basename(first_mask_file).to_s.chomp(@config.masks.first)
         content = ""
-        @config.masks.each do |mask|
+        @config.masks.each_with_index do |mask, index|
           file = File.dirname(first_mask_file) + "/" + file_name + mask
           if File.exist?(file)
-            content += File.readlines(file).join() + "\n"
+            if !@config.ommit_lines.nil? && index != 0
+              content += File.readlines(file).drop(@config.ommit_lines).join() + "\n"
+            else
+              content += File.readlines(file).join() + "\n"
+            end
             delete_file_if_needed(file)
           else
             Poster.post_file_not_found(file)
