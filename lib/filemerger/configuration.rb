@@ -8,7 +8,7 @@ module Filemerger
     def initialize
       Poster.post_configuration_search
 
-      if File.exist?("Mergefile.yaml")
+      if File.exist?("Mergefile")
         Poster.post_configuration_found
         data = YAML.load_file("Mergefile.yaml")
 
