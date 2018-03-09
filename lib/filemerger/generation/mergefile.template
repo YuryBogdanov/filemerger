@@ -7,8 +7,8 @@
 #   - 'PatternThree.swift'
 
 masks:
-  - 'Input.swift'
-  - 'Output.swift'
+  - 'PatternOne.swift'
+  - 'PatternTwo.swift'
 
 # Specify which prefix should contain newly created files (which contain merged content)
 # Example:
@@ -18,13 +18,18 @@ result_mask: 'IO.swift'
 # Specify if files should be deleted after merge
 delete_old_files: true
 
+# Filemerger will look up for files in specified directory. If this is not specified, then
+# files will be looked up in current directory and it's subdirectories
 working_folders:
-  - "Merger/**"
+  - "Example/**"
 
-ommit_lines: 2
+# You can specify number of lines which will be ommited in second, third, etc. files.
+ommit_lines: 0
 
-xcode_project: "Merger.xcodeproj"
+# If you want all changes applied to your Xcode project, then specify it file's name here
+xcode_project: "Example.xcodeproj"
 
+# Xcode project's targets in case you need files to be associated with them.
 xcode_targets:
-  - "Merger"
-  - "Merger.qa"
+  - "Example"
+  - "Example.qa"
