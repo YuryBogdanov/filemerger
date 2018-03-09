@@ -32,7 +32,11 @@ module Filemerger
         Poster.post_file_created(new_file_name)
 
         group = project[File.dirname(first_mask_file)]
-        group.new_file(file_name + config.result_mask)
+        xcode_file = group.new_file(file_name + config.result_mask)
+        targets = obtain_target(project, config.xcode_targets)
+        targets.each do |t|
+          t.add_file_references([xcode_file])
+        end
       end
       Poster.post_merge_finished
       project.save
@@ -58,7 +62,6 @@ module Filemerger
 
           build_file_path = configure_file_ref_path(build_file.file_ref)
           if build_file_path == file
-            # build_phase.remove_reference(build_file)
             build_file.file_ref.remove_from_project
           end
         end
