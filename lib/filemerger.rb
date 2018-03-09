@@ -10,7 +10,9 @@ module Filemerger
     def self.begin_merge
       Poster.post_greeting
       config = Configuration.new
-      Merger.merge_files(config)
+
+      merger = Merger.new(config)
+      merger.merge_files
     end
   end
 end
