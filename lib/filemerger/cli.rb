@@ -9,5 +9,10 @@ module Filemerger
       Filemerger.begin_merge
     end
 
+    desc "Creates mergefile", "Creates mergefile for Filemerger setup"
+    def setup
+      Filemerger.setup
+    end
+
   end
 end

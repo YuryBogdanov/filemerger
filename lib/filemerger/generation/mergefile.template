@@ -1,0 +1,30 @@
+# Specify which files should be merged. The gem will look up for files matching patterns you input here.
+# Do not use asterisk (*).
+# Example:
+# masks:
+#   - 'PatternOne.swift'
+#   - 'PatternTwo.swift'
+#   - 'PatternThree.swift'
+
+masks:
+  - 'Input.swift'
+  - 'Output.swift'
+
+# Specify which prefix should contain newly created files (which contain merged content)
+# Example:
+# result_mask: 'PatternIO.swift'
+result_mask: 'IO.swift'
+
+# Specify if files should be deleted after merge
+delete_old_files: true
+
+working_folders:
+  - "Merger/**"
+
+ommit_lines: 2
+
+xcode_project: "Merger.xcodeproj"
+
+xcode_targets:
+  - "Merger"
+  - "Merger.qa"

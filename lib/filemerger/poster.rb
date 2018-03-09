@@ -46,5 +46,11 @@ module Filemerger
       puts "❗️  Searching folders not specified in Mergefile.".colorize(:yellow)
       puts "🕵️‍♂️  Searching for files in #{Dir.pwd}".colorize(:blue)
     end
+
+    # Generation
+
+    def self.post_mergefile_generated
+      puts "💁‍♂️   Mergefile generated!".colorize(:green)
+    end
   end
 end
