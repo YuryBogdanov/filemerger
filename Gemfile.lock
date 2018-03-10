@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    filemerger (0.3.1)
+    filemerger (0.4.2)
       colorize
       json
       thor
