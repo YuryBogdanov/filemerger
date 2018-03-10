@@ -32,8 +32,13 @@ module Filemerger
       puts "❗️  Couldn't find file #{file}".colorize(:red)
     end
 
-    def self.post_merge_finished
-      puts "✅  The merge has been successfuly completed.".colorize(:green)
+    def self.post_merge_finished(errors_count)
+      if errors_count == 0
+        puts "✅  The merge has been successfuly completed.".colorize(:green)
+      else
+        puts "⚠️  The merge has been completed with #{erros_count} errors".colorize(:yellow)
+        puts "    Please see the log above.".colorize(:yellow)
+      end
     end
 
     # Search
