@@ -18,8 +18,10 @@ module Filemerger
         targets.each do |t|
           t.add_file_references([xcode_file])
         end
+        return true
       else
-        puts "Couldn't find group for #{File.dirname(file_path)}"
+        Poster.post_no_group_found(File.dirname(file_path))
+        return false
       end
     end
 
