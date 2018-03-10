@@ -47,6 +47,10 @@ module Filemerger
       puts "🕵️‍♂️  Searching for files in #{Dir.pwd}".colorize(:blue)
     end
 
+    def self.post_no_group_found(dir)
+      puts "❌  Couldn't find group for #{dir}".colorize(:red)
+    end
+
     # Generation
 
     def self.post_mergefile_generated

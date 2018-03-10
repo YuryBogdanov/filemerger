@@ -19,7 +19,7 @@ module Filemerger
           t.add_file_references([xcode_file])
         end
       else
-        puts "Couldn't find group for #{File.dirname(file_path)}"
+        Poster.post_no_group_found(File.dirname(file_path))
       end
     end
 
