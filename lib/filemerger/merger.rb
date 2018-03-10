@@ -45,7 +45,9 @@ module Filemerger
         File.open(new_file_name, "w") { |f| f.puts content }
         Poster.post_file_created(new_file_name)
 
-        errors += 1 if @xcode_helper.add_file_to_project(first_mask_file, file_name_helper)
+        if @xcode_helper.add_file_to_project(first_mask_file, file_name_helper) == false
+          errors += 1
+        end
       end
       Poster.post_merge_finished(errors)
       project.save
