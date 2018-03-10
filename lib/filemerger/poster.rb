@@ -32,8 +32,13 @@ module Filemerger
       puts "❗️  Couldn't find file #{file}".colorize(:red)
     end
 
-    def self.post_merge_finished
-      puts "✅  The merge has been successfuly completed.".colorize(:green)
+    def self.post_merge_finished(errors_count)
+      if errors_count == 0
+        puts "✅  The merge has been successfuly completed.".colorize(:green)
+      else
+        puts "⚠️  The merge has been completed with #{erros_count} errors".colorize(:yellow)
+        puts "    Please see the log above.".colorize(:yellow)
+      end
     end
 
     # Search
@@ -45,6 +50,10 @@ module Filemerger
     def self.post_default_searching_path
       puts "❗️  Searching folders not specified in Mergefile.".colorize(:yellow)
       puts "🕵️‍♂️  Searching for files in #{Dir.pwd}".colorize(:blue)
+    end
+
+    def self.post_no_group_found(dir)
+      puts "❌  Couldn't find group for #{dir}".colorize(:red)
     end
 
     # Generation

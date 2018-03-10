@@ -21,6 +21,7 @@ module Filemerger
       end
 
       project = @xcode_helper.project
+      errors = 0
 
       first_mask_files.each do |first_mask_file|
         file_name = File.basename(first_mask_file).to_s.chomp(@config.masks.first)
@@ -44,9 +45,9 @@ module Filemerger
         File.open(new_file_name, "w") { |f| f.puts content }
         Poster.post_file_created(new_file_name)
 
-        @xcode_helper.add_file_to_project(first_mask_file, file_name_helper)
+        errors += 1 if @xcode_helper.add_file_to_project(first_mask_file, file_name_helper)
       end
-      Poster.post_merge_finished
+      Poster.post_merge_finished(errors)
       project.save
     end
 
