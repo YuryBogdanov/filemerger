@@ -37,7 +37,7 @@ module Filemerger
         puts "✅  The merge has been successfuly completed.".colorize(:green)
       else
         puts "⚠️  The merge has been completed with #{errors_count} errors".colorize(:yellow)
-        puts "    Please see the log above.".colorize(:yellow)
+        puts "   Please see the log above.".colorize(:yellow)
       end
     end
 
