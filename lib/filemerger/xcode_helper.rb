@@ -12,10 +12,14 @@ module Filemerger
 
     def add_file_to_project(file_path, file_name)
       group = project[File.dirname(file_path)]
-      xcode_file = group.new_file(file_name)
-      targets = get_targets_from_config
-      targets.each do |t|
-        t.add_file_references([xcode_file])
+      unless group.nil?
+        xcode_file = group.new_file(file_name)
+        targets = get_targets_from_config
+        targets.each do |t|
+          t.add_file_references([xcode_file])
+        end
+      else
+        puts "Couldn't find group for #{File.dirname(file_path)}"
       end
     end
 
