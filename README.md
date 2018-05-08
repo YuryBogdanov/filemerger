@@ -22,11 +22,15 @@ Or install it yourself as:
 ## Usage
 
 After installation go to your project's root folder and run  
-`filemerger setup`  
+
+    $ filemerger setup  
+
 Mergefile will be created. Edit it for your needs.
 
 After Mergefile was configured, run   
-`filemerger merge`  
+
+    $ filemerger merge`  
+
 
 
 ## Development
