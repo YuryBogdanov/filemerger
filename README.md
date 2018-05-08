@@ -29,7 +29,7 @@ Mergefile will be created. Edit it for your needs.
 
 After Mergefile was configured, run   
 
-    $ filemerger merge`  
+    $ filemerger merge  
 
 
 
