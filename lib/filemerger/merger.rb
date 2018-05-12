@@ -20,7 +20,9 @@ module Filemerger
         exit
       end
 
-      project = @xcode_helper.project
+      unless @xcode_helper.nil?
+        project = @xcode_helper.project
+      end
       errors = 0
 
       first_mask_files.each do |first_mask_file|
@@ -45,7 +47,7 @@ module Filemerger
         File.open(new_file_name, "w") { |f| f.puts content }
         Poster.post_file_created(new_file_name)
 
-        if @xcode_helper.add_file_to_project(first_mask_file, file_name_helper) == false
+        if !@xcode_helper.nil? && @xcode_helper.add_file_to_project(first_mask_file, file_name_helper) == false
           errors += 1
         end
       end
@@ -57,7 +59,9 @@ module Filemerger
 
     def delete_file_if_needed(file)
       if @config.delete_old_files
-        @xcode_helper.delete_file_from_build_phases(file)
+        unless @xcode_helper.nil?
+          @xcode_helper.delete_file_from_build_phases(file)
+        end
         File.delete(file)
       end
     end
