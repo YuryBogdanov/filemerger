@@ -3,7 +3,13 @@ require 'filemerger/poster'
 
 module Filemerger
   class Configuration
-    attr_reader :masks, :result_mask, :delete_old_files, :working_folders, :ommit_lines, :xcode_project, :xcode_targets
+    attr_reader :masks,
+                :result_mask,
+                :delete_old_files,
+                :working_folders,
+                :ommit_lines,
+                :xcode_project,
+                :xcode_targets
 
     def initialize
       Poster.post_configuration_search
