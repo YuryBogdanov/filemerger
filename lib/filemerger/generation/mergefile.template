@@ -23,8 +23,8 @@ delete_old_files: true
 working_folders:
   - "Example/**"
 
-# You can specify number of lines which will be ommited in second, third, etc. files.
-ommit_lines: 0
+# You can specify number of lines which will be omitted in second, third, etc. files.
+omit_lines: 0
 
 # If you want all changes applied to your Xcode project, then specify it file's name here
 xcode_project: "Example.xcodeproj"
