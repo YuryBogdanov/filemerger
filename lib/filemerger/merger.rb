@@ -54,7 +54,9 @@ module Filemerger
         end
       end
       Poster.post_merge_finished(errors)
-      project.save
+      unless @xcode_helper.nil?
+        project.save
+      end
     end
 
     private
