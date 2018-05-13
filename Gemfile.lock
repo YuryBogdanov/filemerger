@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    filemerger (0.4.7)
+    filemerger (0.4.8)
       colorize
       json
       thor
@@ -16,15 +16,15 @@ GEM
     colored2 (3.1.2)
     colorize (0.8.1)
     json (2.1.0)
-    nanaimo (0.2.3)
+    nanaimo (0.2.5)
     rake (10.5.0)
     thor (0.20.0)
-    xcodeproj (1.5.6)
-      CFPropertyList (~> 2.3.3)
+    xcodeproj (1.5.7)
+      CFPropertyList (>= 2.3.3, < 4.0)
       atomos (~> 0.1.2)
       claide (>= 1.0.2, < 2.0)
       colored2 (~> 3.1)
-      nanaimo (~> 0.2.3)
+      nanaimo (~> 0.2.4)
 
 PLATFORMS
   ruby
