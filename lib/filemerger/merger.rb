@@ -9,7 +9,9 @@ module Filemerger
 
     def initialize(config)
       @config = config
-      @xcode_helper = XcodeHelper.new(config)
+      unless config.xcode_project.nil?
+        @xcode_helper = XcodeHelper.new(config)
+      end
     end
 
     def merge_files
